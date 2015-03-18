@@ -1,0 +1,41 @@
+[
+  {
+    "number": "000123456789",
+    "valid": true
+  },
+  {
+    "number": "000111111116",
+    "valid": false,
+    "error": {
+      "code": "no_account"
+    }
+  },
+  {
+    "number": "000111111113",
+    "valid": false,
+    "error": {
+      "code": "account_closed"
+    }
+  },
+  {
+    "number": "000222222227",
+    "valid": false,
+    "error": {
+      "code": "insufficient_funds"
+    }
+  },
+  {
+    "number": "000333333335",
+    "valid": false,
+    "error": {
+      "code": "not_authorized"
+    }
+  },
+  {
+    "number": "000444444440",
+    "valid": false,
+    "error": {
+      "code": "invalid_currency"
+    }
+  }
+]
