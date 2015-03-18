@@ -1,7 +1,7 @@
 'use strict';
 
-import extend from 'xtend';
 import deepEqual from 'deep-equal';
+import applyDefaults from './defaults';
 import cards from './cards.json';
 
 export var foo = 'bar';
@@ -15,11 +15,7 @@ const defaults = {
   checks: true
 };
 
-function applyDefaults (cards) {
-  return cards.map(card => extend(defaults, card));
-}
-
-cards = applyDefaults(cards);
+cards = applyDefaults(defaults, cards);
 
 export function all () {
   return cards.slice();
