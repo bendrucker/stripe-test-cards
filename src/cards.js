@@ -1,10 +1,7 @@
 'use strict';
 
-import deepEqual from 'deep-equal';
-import applyDefaults from './defaults';
+import {applyDefaults, contains} from './utils';
 import cards from './cards.json';
-
-export var foo = 'bar';
 
 const defaults = {
   debit: false,
@@ -31,13 +28,4 @@ export function fails (type, filter) {
   return cards
     .filter(card => !card.valid && card.error.type === type)
     .filter(card => contains(card.error, filter));
-}
-
-function contains (actual, expected) {
-  const keys = Object.keys(expected);
-  return !keys.length || !keys
-    .filter((key) => {
-      return !deepEqual(actual[key], expected[key]);
-    })
-    .length;
 }
