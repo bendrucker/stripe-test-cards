@@ -19,12 +19,15 @@ test('fails', (t) => {
     checks: [
       'address_zip'
     ]
-  }).length, 1, 'filter');
+  })[0].number, '4000000000000036', 'filter by checks');
+  t.equal(cards.fails('charge', {
+    code: 'processing_error'
+  })[0].number, '4000000000000119', 'filter by code');
   t.equal(cards.fails('check', {
     checks: [
       'address_zip',
       'address_line1'
     ]
-  }).length, 1, 'filter sort order');
+  }).length, 1, 'filter checks with different order');
   t.end();
 });
