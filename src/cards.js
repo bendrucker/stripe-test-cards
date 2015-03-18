@@ -30,8 +30,18 @@ export function valid (type) {
 }
 
 export function fails (type, filter) {
-  if (filter && filter.checks) filter.checks.sort();
+  filter = filter || {};
+  if (filter.checks) filter.checks.sort();
   return cards
     .filter(card => !card.valid && card.error.type === type)
-    .filter(card => deepEqual(card.error, filter));
+    .filter(card => contains(card.error, filter));
+}
+
+function contains (actual, expected) {
+  const keys = Object.keys(expected);
+  return !keys.length || !keys
+    .filter((key) => {
+      return !deepEqual(actual[key], expected[key]);
+    })
+    .length;
 }
