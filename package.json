@@ -1,0 +1,26 @@
+{
+  "name": "stripe-test-data",
+  "version": "1.0.0",
+  "description": "Helpers for using Stripe test data numbers to simulate transactions",
+  "main": "./src",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bendrucker/stripe-test-data.git"
+  },
+  "keywords": [
+    "stripe",
+    "test",
+    "credit",
+    "cards",
+    "numbers"
+  ],
+  "author": "Ben Drucker <bvdrucker@gmail.com> (http://bendrucker.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bendrucker/stripe-test-data/issues"
+  },
+  "homepage": "https://github.com/bendrucker/stripe-test-data"
+}
