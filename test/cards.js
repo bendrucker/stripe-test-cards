@@ -14,20 +14,21 @@ test('valid', (t) => {
 });
 
 test('fails', (t) => {
-  t.equal(cards.fails('check').length, 3, 'no filter');
+  t.ok(cards.fails('check'), 'no filter');
+  t.notOk(cards.fails('foo'), 'invalid type');
   t.equal(cards.fails('check', {
     checks: [
       'address_zip'
     ]
-  })[0].number, '4000000000000036', 'filter by checks');
+  }).number, '4000000000000036', 'filter by checks');
   t.equal(cards.fails('charge', {
     code: 'processing_error'
-  })[0].number, '4000000000000119', 'filter by code');
-  t.equal(cards.fails('check', {
+  }).number, '4000000000000119', 'filter by code');
+  t.ok(cards.fails('check', {
     checks: [
       'address_zip',
       'address_line1'
     ]
-  }).length, 1, 'filter checks with different order');
+  }), 'filter checks with different order');
   t.end();
 });

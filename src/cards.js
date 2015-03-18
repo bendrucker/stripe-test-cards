@@ -27,5 +27,5 @@ export function fails (type, filter) {
   if (filter.checks) filter.checks.sort();
   return cards
     .filter(card => !card.valid && card.error.type === type)
-    .filter(card => contains(card.error, filter));
+    .filter(card => contains(card.error, filter))[0];
 }
