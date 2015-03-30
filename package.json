@@ -1,6 +1,6 @@
 {
   "name": "stripe-test-data",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Helpers for using Stripe test data numbers to simulate transactions",
   "main": "./src",
   "scripts": {
